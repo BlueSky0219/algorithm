@@ -1,12 +1,39 @@
 package com.sky.algorithm.array;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author bluesky
  * @create 2023-10-21-11:06
  */
 public class Array {
+
+    /**
+     * 27. 移除元素
+     */
+    public static void removeElement() {
+
+        int[] nums = {3, 2, 2, 3};
+        int val = 3;
+
+        List<Integer> list = new ArrayList<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != val) {
+                list.add(nums[i]);
+            }
+            nums[i] = 999;
+        }
+
+        int result = 0;
+        for (Integer l : list) {
+            nums[result] = l;
+            result++;
+        }
+        System.out.println("result = " + result);
+    }
 
     /**
      * 26. 删除有序数组中的重复项
@@ -59,7 +86,7 @@ public class Array {
 
     public static void main(String[] args) {
 
-        removeDuplicates();
+        removeElement();
     }
 
 
