@@ -11,6 +11,32 @@ import java.util.List;
 public class Array {
 
     /**
+     * 35. 搜索插入位置
+     * 二分查找
+     */
+    public static void searchInsert() {
+        int[] nums = {1, 3, 5, 6};
+        int target = 2;
+
+        int left = 0;
+        int right = nums.length - 1;
+
+        while (left <= right) {
+            int middle = (left + right) / 2;
+            if (nums[middle] == target) {
+                System.out.println("middle = " + middle);
+            } else if (nums[middle] < target) {
+                left = middle + 1;
+            } else {
+                right = middle - 1;
+            }
+        }
+
+        // 这个程序返回left或者right+1正好等于答案
+        System.out.println(left);
+    }
+
+    /**
      * 27. 移除元素
      */
     public static void removeElement() {
@@ -86,7 +112,7 @@ public class Array {
 
     public static void main(String[] args) {
 
-        removeElement();
+        searchInsert();
     }
 
 
